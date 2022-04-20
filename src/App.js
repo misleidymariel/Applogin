@@ -1,7 +1,8 @@
 import React from 'react';
-import { Grid , Container, Paper} from '@material-ui/core';
+import { Grid , Container, Paper, Avatar } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import beach from './assert/images/beach.jpg';
+import { LockOutlined as LockOutlinedIcon } from '@material-ui/icons';
 
 const useStyles = makeStyles(theme =>({
     root: {
@@ -22,10 +23,13 @@ const useStyles = makeStyles(theme =>({
       }
     },
     div:{
-      marginTop: theme.spacing(),
+      marginTop: theme.spacing(8),
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center'
+    },
+    avatar:{
+      margin: theme.spacing(30)
     }
 }))
 
@@ -35,6 +39,9 @@ export const App = () => {
     <Grid container component='main' className={ clases.root}>
       <Container component= { Paper} elevation= {5} maxWidth='xs' className={ clases.container}>
         <div className={ clases.div}>
+          <Avatar>
+              <LockOutlinedIcon/>
+          </Avatar>
 
         </div>
       </Container>
