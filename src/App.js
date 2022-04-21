@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid , Container, Paper, Avatar } from '@material-ui/core';
+import { Grid , Container, Paper, Avatar, Typography, TextField, Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import beach from './assert/images/beach.jpg';
 import { LockOutlined as LockOutlinedIcon } from '@material-ui/icons';
@@ -29,7 +29,16 @@ const useStyles = makeStyles(theme =>({
       alignItems: 'center'
     },
     avatar:{
-      margin: theme.spacing(30)
+      margin: theme.spacing(1),
+      backgroundColor: theme.palette.primary.main
+    }, 
+    form:{
+      width: '100%',
+      marginTop: theme.spacing(1)
+
+    }, 
+    button:{
+      margin: theme.spacing(3, 0, 2 )
     }
 }))
 
@@ -39,10 +48,40 @@ export const App = () => {
     <Grid container component='main' className={ clases.root}>
       <Container component= { Paper} elevation= {5} maxWidth='xs' className={ clases.container}>
         <div className={ clases.div}>
-          <Avatar>
+          <Avatar className={ clases.avatar}>
               <LockOutlinedIcon/>
           </Avatar>
-
+          <Typography className='h1' variant='h6' >
+            Sign In 
+          </Typography>
+          <form className={ clases.form}>
+            <TextField
+              fullWidth
+              autoFocus
+              color='primary'
+              margin='normal'
+              label='Nickname' 
+              variant='outlined'  
+              name='name'         
+            />
+            <TextField
+              fullWidth
+              color='primary'
+              margin='normal'
+              label='Password' 
+              variant='outlined'   
+              type='password'        
+            />
+            <Button
+              fullWidth
+              variant='contained'
+              color='primary'
+              className={ clases.button}
+            
+            >
+              Ingresar
+            </Button>
+          </form>
         </div>
       </Container>
     </Grid>
